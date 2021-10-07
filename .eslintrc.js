@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:prettier/recommended',
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', '@babel/plugin-syntax-top-level-await'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

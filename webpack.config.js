@@ -11,6 +11,9 @@ module.exports = {
     publicPath: '/dist/',
     open: true,
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   plugins: [new CleanWebpackPlugin({ cleanStaleWebpackAssets: false })],
   watch: true,
   watchOptions: {

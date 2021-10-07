@@ -24,6 +24,9 @@
   "author": "Juan Calle",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "clean-webpack-plugin": "^4.0.0",
     "commitizen": "^4.2.4",
     "commitizen-emoji": "^1.0.5",
