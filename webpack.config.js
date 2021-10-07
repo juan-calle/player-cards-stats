@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/playerStatsCard.js',
   output: {
     filename: 'playerStatsCard.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
   },
   module: {
     rules: [
