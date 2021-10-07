@@ -1,4 +1,5 @@
 module.exports = {
+  parser: '@babel/eslint-parser',
   env: {
     browser: true,
     es2021: true,
@@ -10,11 +11,10 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:prettier/recommended',
   ],
-  plugins: ['prettier', '@babel/plugin-syntax-top-level-await'],
+  plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: { impliedStrict: true },
   },
   rules: {
     indent: ['error', 2],
