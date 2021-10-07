@@ -2,7 +2,7 @@
   "name": "player-cards-stats-component",
   "version": "1.0.0",
   "description": "An encapsulated web component written in vanilla JS and Sass that displays a dropdown menu with football players names and stats",
-  "main": "./src/playerStatsCards.js",
+  "main": "./src/components/player-stats-card/playerStatsCards.js",
   "scripts": {
     "lint": "eslint --ext .js --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .js --ignore-path .gitignore . --fix",

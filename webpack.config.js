@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/playerStatsCard.js',
+  entry: './src/components/player-stats-card/playerStatsCard.js',
   output: {
     filename: 'playerStatsCard.js',
     path: path.resolve(__dirname, 'public'),
