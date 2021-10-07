@@ -1,0 +1,43 @@
+{
+  "name": "player-cards-stats-component",
+  "version": "1.0.0",
+  "description": "An encapsulated web component written in vanilla JS and Sass that displays a dropdown menu with football players names and stats",
+  "main": "./src/playerStatsCards.js",
+  "scripts": {
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .js --ignore-path .gitignore . --fix",
+    "prettier": "prettier --write .",
+    "build": "webpack  --config webpack.config.js",
+    "commit": "git commit --no-edit",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "player-cards-stats-component"
+  },
+  "keywords": [
+    "web-components",
+    "javascript",
+    "shadow-dom",
+    "custom-elements"
+  ],
+  "author": "Juan Calle",
+  "license": "ISC",
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "commitizen-emoji": "^1.0.5",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.0",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.4.1",
+    "raw-loader": "^4.0.2",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0"
+  }
+}

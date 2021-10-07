@@ -1,0 +1,209 @@
+{
+  "path": "./node_modules/commitizen-emoji",
+  "config": {
+    "commitizenEmoji": {
+      "skipQuestions": ["scope", "breakingBody"],
+      "types": [
+        {
+          "emoji": "♿️",
+          "code": ":wheelchair:",
+          "description": "Improving accessibility.",
+          "name": "access"
+        },
+        {
+          "emoji": "💫",
+          "code": ":dizzy:",
+          "description": "Adding or updating animations and transitions.",
+          "name": "animation"
+        },
+        {
+          "emoji": "🍱",
+          "code": ":bento:",
+          "description": "Adding or updating assets.",
+          "name": "assets"
+        },
+        {
+          "emoji": "🐛",
+          "code": ":bug:",
+          "description": "Fixing a bug.",
+          "name": "bugfix"
+        },
+        {
+          "emoji": "💡",
+          "code": ":bulb:",
+          "description": "Add or update comments in source code.",
+          "name": "comments"
+        },
+        {
+          "emoji": "🔧",
+          "code": ":wrench:",
+          "description": "Changing configuration files.",
+          "name": "config"
+        },
+        {
+          "emoji": "➕",
+          "code": ":heavy_plus_sign:",
+          "description": "Adding a dependency.",
+          "name": "dep"
+        },
+        {
+          "emoji": "➖",
+          "code": ":heavy_minus_sign:",
+          "description": "Removing a dependency.",
+          "name": "dep"
+        },
+        {
+          "emoji": "📝",
+          "code": ":memo:",
+          "description": "Writing docs.",
+          "name": "docs"
+        },
+        {
+          "emoji": "⬇️",
+          "code": ":arrow_down:",
+          "description": " Downgrading dependencies.",
+          "name": "downgrade"
+        },
+        {
+          "emoji": "⚗",
+          "code": ":alembic:",
+          "description": " Experimenting new things.",
+          "name": "experiment"
+        },
+        {
+          "emoji": "✨",
+          "code": ":sparkles:",
+          "description": "Introducing new features.",
+          "name": "feature"
+        },
+        {
+          "emoji": "🩹",
+          "code": ":adhesive_bandage:",
+          "description": "Fix for a simple non-critical issue.",
+          "name": "fixcold"
+        },
+        {
+          "emoji": "🚑",
+          "code": ":ambulance:",
+          "description": "Fix for a critical issue.",
+          "name": "fixhot"
+        },
+        {
+          "emoji": "🎨",
+          "code": ":art:",
+          "description": "Improving structure / formatting code.",
+          "name": "format"
+        },
+        {
+          "emoji": "🙈",
+          "code": ":see_no_evil:",
+          "description": "Adding or updating a .gitignore file.",
+          "name": "gitignore"
+        },
+        {
+          "emoji": "📄",
+          "code": ":page_facing_up:",
+          "description": "Adding or updating license.",
+          "name": "license"
+        },
+        {
+          "emoji": "🚨",
+          "code": ":rotating_light:",
+          "description": "Configuring linter/formatter.",
+          "name": "lintconfig"
+        },
+        {
+          "emoji": "🔀",
+          "code": ":twisted_rightwards_arrows:",
+          "description": "Merging branches.",
+          "name": "merge"
+        },
+        {
+          "emoji": "🤡",
+          "code": ":clown_face:",
+          "description": "Mocking things.",
+          "name": "mock"
+        },
+        {
+          "emoji": "🚚",
+          "code": ":truck:",
+          "description": "Moving or renaming files.",
+          "name": "move"
+        },
+        {
+          "emoji": "⚡️",
+          "code": ":zap:",
+          "description": "Improving performance.",
+          "name": "performance"
+        },
+        {
+          "emoji": "💩",
+          "code": ":poop:",
+          "description": "Writing bad code that needs to be improved.",
+          "name": "poo"
+        },
+        {
+          "emoji": "🔥",
+          "code": ":fire:",
+          "description": "Removing code or files.",
+          "name": "prune"
+        },
+        {
+          "emoji": "♻️",
+          "code": ":recycle:",
+          "description": " Refactoring code.",
+          "name": "refactoring"
+        },
+        {
+          "emoji": "📱",
+          "code": ":iphone:",
+          "description": "Working on responsive design.",
+          "name": "responsive"
+        },
+        {
+          "emoji": "⏪",
+          "code": ":rewind:",
+          "description": "Reverting changes.",
+          "name": "revert"
+        },
+        {
+          "emoji": "🔒",
+          "code": ":lock:",
+          "description": "Fixing security issues.",
+          "name": "security"
+        },
+        {
+          "emoji": "✅",
+          "code": ":white_check_mark:",
+          "description": "Adding tests.",
+          "name": "test"
+        },
+        {
+          "emoji": "✏️",
+          "code": ":pencil2:",
+          "description": " Fixing typos.",
+          "name": "typo"
+        },
+        {
+          "emoji": "💄",
+          "code": ":lipstic:",
+          "description": "Updating the UI and style files.",
+          "name": "ui"
+        },
+        {
+          "emoji": "⬆️",
+          "code": ":arrow_up:",
+          "description": " Upgrading dependencies.",
+          "name": "upgrade"
+        },
+        {
+          "emoji": "🚸",
+          "code": ":children_crossing:",
+          "description": "Improving user experience / usability.",
+          "name": "ux"
+        }
+      ],
+      "replaceTypes": true
+    }
+  }
+}
