@@ -1,0 +1,139 @@
+$bottom-panel: #EB154F;
+$stat-row: #EAEAEA;
+$white: #FFFFFF;
+$dark-text: #38003c;
+$slateGray: slateGray;
+$select-bg: #EAEAEA;
+$min-width: 300px;
+$min-height: 600px;
+$font-size: 16px;
+$box-shadow: 7.9px 0px 2.3px rgba(0, 0, 0, 0.02),  9.3px 0px 4.3px rgba(0, 0, 0, 0.027),  9.9px 0px 6.5px rgba(0, 0, 0, 0.03),  10.5px 0px 9.4px rgba(0, 0, 0, 0.032),  11.8px 0px 13.7px rgba(0, 0, 0, 0.036),  18px 0px 24px rgba(0, 0, 0, 0.06);
+
+*{
+  box-sizing: border-box;
+}
+:host(#playerCards){
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.player-stats-card-component{
+  min-width: 301px;
+  min-height: 600px;
+  max-width: 100%;
+  height: 100%;
+  background: $white url('./assets/pattern.png');
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+  grid-template-rows: 0.5fr 1.5fr repeat(2, 1fr) 2fr;
+  grid-auto-flow: row;
+  box-shadow: $box-shadow;
+  grid-template-areas: "player-selection player-selection" "images images" "images images"  "stats-table stats-table" "stats-table stats-table";
+  color: $white;
+}
+.player-selection {
+  height: 100%;
+  width: 100%;
+  grid-area: player-selection;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  #player-selection {
+    width: 90%;
+    height: 60%;
+    background-color: $select-bg;
+    border: 0px;
+    padding: 0.5em;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    box-shadow: $box-shadow;
+    border: 0.5px solid #fefefe;
+    cursor: pointer;
+  }
+}
+#player-selection select:active,
+select:hover {
+  outline-color: $bottom-panel;
+}
+.images {
+  grid-area: images;
+  display: flex;
+  justify-content: space-around;
+  .player-headshot {
+    display: flex;
+    grid-area: images;
+    justify-items: flex-start;
+    align-items: flex-end;
+    > img#player-headshot {
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      align-self: flex-end;
+    }
+  }
+  .team-badge {
+    position: relative;
+    top: 42px;
+    grid-area: images;
+    display: flex;
+    align-items: flex-end;
+    > mg#team-badge {
+        border-radius: 50%;
+        box-shadow: $box-shadow;
+    }
+  }
+}
+.player-stats {
+  height: 100%;
+  width: 100%;
+  background-color: $bottom-panel;
+  grid-area: stats-table;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  #stats-table {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+    align-self: center;
+    >#table-title {
+      margin-bottom: 1em;
+      h3 {
+        line-height: 0;
+      }
+    }
+    > #table-title span:nth-child(2) {
+        display: block;
+        display: flex;
+        margin-top: 1em;
+        font-size: $font-size - 2;
+        align-self: flex-start;
+    }
+    > thead {
+        vertical-align: top;
+    }
+    .stats-row {
+      width: 100%;
+      height: 40px;
+      background-color: $select-bg;
+      box-shadow: $box-shadow;
+      color: $dark-text;
+      margin-bottom: 1px;
+      margin-top: 2px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      > .stat-title {
+          padding-left: 1em;
+      }
+      > .stat-data {
+          padding-right: 1em;
+      }
+    }
+  }
+}
