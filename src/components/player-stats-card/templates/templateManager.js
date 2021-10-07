@@ -1,8 +1,16 @@
-import api from '../api/apiServices';
+import dataHelpers from '../api/apiServices';
 import markup from './htmlTemplate';
 
-const data = await api.fetchData();
-
+const fetched = await dataHelpers.fetchData();
+const data = fetched.players;
+const {
+  getPic,
+  getName,
+  getPosition,
+  getStats,
+  getPlayerIndex,
+  checkMissingStats,
+} = dataHelpers;
 export default {
   mapDOM(scope) {
     return {
@@ -25,15 +33,12 @@ export default {
     let generatedMarkup = '';
     generatedMarkup += markup.openWrapper();
     generatedMarkup += markup.playerSelector(this.options());
-    // generatedMarkup += markup.playerInfo();
+    generatedMarkup += markup.playerInfo(this.player());
     generatedMarkup += markup.closeWrapper();
     return generatedMarkup;
   },
-
-  /* Takes the info needed to populate the dropdown menu and generates an option
-  value for each player */
   options() {
-    return data.players
+    return data
       .map(item => {
         const {
           id,
@@ -42,5 +47,67 @@ export default {
         return `<option value='${id}'>${first} ${last}</option>`;
       })
       .join('');
+  },
+  player(id) {
+    let indx = 0;
+    if (id != null) indx = getPlayerIndex(data, id);
+    const {
+      player: {
+        id: playerId,
+        name: { first, last },
+        info: { positionInfo },
+        currentTeam: { id: teamId, name: teamName },
+      },
+      stats: {
+        0: { value: goals },
+        4: { value: fwdPass },
+        5: { value: assists },
+        6: { value: appearances },
+        7: { value: minsPlayed },
+        8: { value: backPass },
+      },
+    } = checkMissingStats(data, indx);
+    const playerInfo = {
+      playerId,
+      first,
+      last,
+      positionInfo,
+      teamId,
+      teamName,
+      stats: { goals, fwdPass, assists, appearances, minsPlayed, backPass },
+    };
+
+    playerInfo.name = getName(first, last);
+    playerInfo.position = getPosition(positionInfo);
+    playerInfo.stats.goalsMatch = getStats(
+      'goalsMatch',
+      appearances,
+      goals,
+      fwdPass,
+      backPass,
+      minsPlayed
+    );
+    playerInfo.stats.passesMinute = getStats(
+      '',
+      appearances,
+      goals,
+      fwdPass,
+      backPass,
+      minsPlayed
+    );
+    playerInfo.headshotURL = getPic('headshot', playerId, playerInfo.name);
+    playerInfo.teamBadgeURL = getPic('teamBadgeURL', teamId, teamName);
+
+    [
+      'first',
+      'last',
+      'positionInfo',
+      'fwdPass',
+      'backPass',
+      'minsPlayed',
+      'teamId',
+      'teamName',
+    ].forEach(prop => delete playerInfo[prop]);
+    return playerInfo;
   },
 };
