@@ -1,10 +1,11 @@
 import style from './styles/style.scss';
+import Template from './templates/templateManager.js';
 
 class PlayerStatsCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = 'Hello World!';
+    this.shadowRoot.innerHTML = Template.render();
 
     // Webpack compiles the SCSS, gets appended as a string
     this.theme = document.createElement('style');
