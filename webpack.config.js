@@ -1,16 +1,38 @@
+const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: './src/components/player-stats-card/playerStatsCard.js',
-  output: {
-    filename: 'playerStatsCard.js',
-    path: path.resolve(__dirname, 'public'),
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './public',
+    publicPath: '/dist/',
+    open: true,
+  },
+  plugins: [new CleanWebpackPlugin({ cleanStaleWebpackAssets: false })],
+  watch: true,
+  watchOptions: {
+    ignored: ['node_modules/**'],
   },
   module: {
     rules: [
       {
-        test: /\.sass$/,
+        test: /\.html$/i,
+        loader: 'html-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        loader: 'css-loader',
+        exclude: /node_modules/,
+        options: {
+          sourceMap: false,
+        },
+      },
+      {
+        test: /\.scss$/,
         use: [
           'raw-loader',
           {
@@ -23,6 +45,32 @@ module.exports = {
           },
         ],
       },
+    ],
+  },
+  resolve: {
+    extensions: ['.js'],
+  },
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    chunkFilename: '[id].bundle.js',
+  },
+
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: false,
+          },
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
     ],
   },
 };
