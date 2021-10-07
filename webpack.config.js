@@ -4,7 +4,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/components/player-stats-card/playerStatsCard.js',
+  entry: [
+    'regenerator-runtime/runtime.js',
+    './src/components/player-stats-card/playerStatsCard.js',
+  ],
   devtool: 'source-map',
   devServer: {
     contentBase: './public',

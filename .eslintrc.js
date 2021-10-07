@@ -22,5 +22,8 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'prettier/prettier': 'error',
+    'no-plusplus': 'off',
+    'no-restricted-syntax': 'off',
+    'no-unused-expressions': 'off',
   },
 };
