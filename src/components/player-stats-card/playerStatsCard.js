@@ -1,5 +1,5 @@
 import style from './styles/style.scss';
-import Template from './templates/templateManager.js';
+import Template from './templates/templateManager';
 
 class PlayerStatsCard extends HTMLElement {
   constructor() {

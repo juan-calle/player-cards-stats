@@ -1,6 +1,8 @@
-import fetchData from '../api/apiServices.js';
-import markup from './htmlTemplate.js';
-const { data } = await fetchData;
+import api from '../api/apiServices';
+import markup from './htmlTemplate';
+
+const data = await api.fetchData();
+
 export default {
   mapDOM(scope) {
     return {
@@ -22,9 +24,23 @@ export default {
   html() {
     let generatedMarkup = '';
     generatedMarkup += markup.openWrapper();
-    generatedMarkup += markup.playerSelector();
-    generatedMarkup += markup.playerInfo();
+    generatedMarkup += markup.playerSelector(this.options());
+    // generatedMarkup += markup.playerInfo();
     generatedMarkup += markup.closeWrapper();
     return generatedMarkup;
+  },
+
+  /* Takes the info needed to populate the dropdown menu and generates an option
+  value for each player */
+  options() {
+    return data.players
+      .map(item => {
+        const {
+          id,
+          name: { first, last },
+        } = item.player;
+        return `<option value='${id}'>${first} ${last}</option>`;
+      })
+      .join('');
   },
 };
